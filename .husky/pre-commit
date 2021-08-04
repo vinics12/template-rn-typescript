@@ -2,5 +2,3 @@
 . "$(dirname "$0")/_/husky.sh"
 
 yarn run lint
-npx prettier --write ./src
-yarn run format

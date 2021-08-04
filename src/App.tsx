@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 export type Props = {
-	name: string;
-	baseEnthusiasmLevel?: number;
+  name: string;
+  baseEnthusiasmLevel?: number;
 };
 
 const Hello: React.FC<Props> = ({ name, baseEnthusiasmLevel = 0 }) => {
@@ -16,22 +16,22 @@ const Hello: React.FC<Props> = ({ name, baseEnthusiasmLevel = 0 }) => {
 		numChars > 0 ? Array(numChars + 1).join('!') : '';
 
 	return (
-		<View style={styles.container}>
-			<Text style={styles.greeting}>
-				Hello teste {name}
+		<View style={ styles.container }>
+			<Text style={ styles.greeting }>
+        Hello teste {name}
 				{getExclamationMarks(enthusiasmLevel)}
 			</Text>
 			<View>
 				<Button
 					title="Increase enthusiasm"
 					accessibilityLabel="increment"
-					onPress={onIncrement}
+					onPress={ onIncrement }
 					color="blue"
 				/>
 				<Button
 					title="Decrease enthusiasm"
 					accessibilityLabel="decrement"
-					onPress={onDecrement}
+					onPress={ onDecrement }
 					color="red"
 				/>
 			</View>

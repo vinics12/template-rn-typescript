@@ -24,8 +24,7 @@
   "plugins": [
     "react",
     "react-hooks",
-    "@typescript-eslint",
-    "prettier"
+    "@typescript-eslint"
   ],
   "rules": {
     "indent": [
@@ -46,11 +45,35 @@
       "error",
       "always"
     ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-function": "off",
     "react/display-name": "off",
     "react/prop-types": "off",
-    "prettier/prettier": "error"
+    "object-curly-spacing": ["error", "always" ],
+    "react/jsx-boolean-value": [0, "never"],
+    "react/jsx-curly-spacing": [1, "always", {
+      "spacing": {
+        "objectLiterals": "always",
+        "children": true
+      }
+    }],
+    "react/jsx-no-bind": 0,
+    "space-before-function-paren": ["error", "never"],
+    "operator-linebreak": [2, "after"],
+    "padded-blocks": 0,
+    "no-multi-spaces": "error",
+    "key-spacing": ["error", { "afterColon": true }],
+    "max-len": ["error", { "code": 100 }]
   },
   "settings": {
     "react": {
