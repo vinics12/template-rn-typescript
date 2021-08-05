@@ -32,3 +32,36 @@ Criando um projeto com React-native + typescript + eslint + redux-saga
   - Rodar `yarn -D husky` e em seguida `husky install`
   - Para rodar o eslint e o prettier antes de cada commit, basta rodar:
   `npx husky add .husky/pre-commit "yarn run lint" &&  npx husky add .husky/pre-commit "npx prettier --write ./src" && npx husky add .husky/pre-commit "yarn run format""`
+
+# Configuração de testes unitários
+
+Configura o Testing Library + Jest como ferramenta de execução de testes. Além de aplicar as configurações voltadas para o React Native.
+
+## Passos
+
+- Instalar as dependências base `@testing-library/jest-dom`, `@testing-library/jest-native` e `@testing-library/react-native`.
+- Configurar o arquivo `jest.config.js` com as configurações básicas para os arquivos de teste como, padrão de metch, ferramentas auxiliares, tipos de arquivos e etc.
+  - Aplicado configuraçẽs de relatório (collectCoverage e coverageReporters)
+  - Configuraçẽs auxiliares (extend-expect)
+  - Tipos de arquivos a serem testados (testMatch).
+
+```js
+  module.exports = {
+    collectCoverage: true, /** Enable report coverage */
+    coverageReporters: ['text', 'lcov'], /** Types of reports */
+    preset: 'react-native',
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+    setupFilesAfterEnv: ["@testing-library/jest-native/extend-expect"], /** Enable expect tools */
+    roots: ["<rootDir>/src"],
+    transform: {
+      "^.+\\.tsx?$": "ts-jest",
+    },
+    testMatch: [
+      "<rootDir>/src/**/__tests__/*.spec.(ts|tsx)"
+    ],
+  };
+```
+
+## Próximos passos
+
+Configurar testes de snapshots ou pelo menos criar um de exemplo.
